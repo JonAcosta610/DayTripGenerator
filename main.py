@@ -19,21 +19,25 @@ def day_trip_generator():
     print(f"Entertainment: {random_entertainment}")
 day_trip_generator()
 
-user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
-while user_satisfaction == "No":
-    user_replace = input("What selection do you want to replace? ")
-    if user_replace == "Destination":
-        random_destination = random.choice(destinations)
-        day_trip_generator()
+def itinerary():
+    user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
+    while user_satisfaction == "No":
+        user_replace = input("What selection do you want to replace? ")
+        if user_replace == "Destination":
+            random_destination = random.choice(destinations)
+            day_trip_generator()
 
-    elif user_replace == "Restaurant":
-        random_restaurant = random.choice(restaurants)
-        day_trip_generator()
+        elif user_replace == "Restaurant":
+            random_restaurant = random.choice(restaurants)
+            day_trip_generator()
 
-    elif user_replace == "Mode of Transportation":
-        random_transportation = random.choice(mode_of_transportation)
-        day_trip_generator()
+        elif user_replace == "Mode of Transportation":
+            random_transportation = random.choice(mode_of_transportation)
+            day_trip_generator()
 
-    elif user_replace == "Entertainment":
-        random_entertainment = random.choice(entertainment_list)
-        day_trip_generator()
+        elif user_replace == "Entertainment":
+            random_entertainment = random.choice(entertainment_list)
+            day_trip_generator()
+    
+    user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
+itinerary()
