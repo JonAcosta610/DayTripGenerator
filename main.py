@@ -1,5 +1,26 @@
 
 destinations = ["Jamaica", "Hawaii", "Aruba", "Mal Dives", "Dominican Republic", "Puerto Rico"]
-reataurants = ["Cara Mia", "Applebees", "Reethi Restaurant", "Symphony Restaurant", "Sea House Cafe", "Murphys West End Restaurant"]
+restaurants = ["Cara Mia", "Applebees", "Reethi Restaurant", "Symphony Restaurant", "Sea House Cafe", "Murphys West End Restaurant"]
 mode_of_transportation = ["plane", "cruise ship", "train", "car", "bus", "swimming", "mopes", "bicycles"]
 entertainment_list = ["bus tour", "scuba diving", "dolphin watching", "surfing", "plantation tours", "historic site tours"]
+
+import random
+
+random_destination = random.choice(destinations)
+
+random_restaurant = random.choice(restaurants)
+
+random_transportation = random.choice(mode_of_transportation)
+
+random_entertainment = random.choice(entertainment_list)
+
+print("Welcome to Trip Planner! Where we will plan your trip.")
+print(f"Destination: {random_destination}")
+print(f"Restaurant: {random_restaurant}")
+print(f"Mode of Transportation: {random_transportation}")
+print(f"Entertainment: {random_entertainment}")
+user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
+if user_satisfaction == "Yes":
+    print("Safe travels! Enjoy your trip!")
+else:
+    print(input("Which option do you want to change? "))
