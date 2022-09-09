@@ -1,6 +1,6 @@
 destinations = ["Jamaica", "Hawaii", "Aruba", "Mal Dives", "Dominican Republic", "Puerto Rico"]
 restaurants = ["Cara Mia", "Applebees", "Reethi Restaurant", "Symphony Restaurant", "Sea House Cafe", "Murphys West End Restaurant"]
-mode_of_transportation = ["plane", "cruise ship", "train", "car", "bus", "swimming", "mopes", "bicycles"]
+mode_of_transportation = ["plane", "cruise ship", "train", "car", "bus", "motorcycle", "mopeds", "bicycles"]
 entertainment_list = ["bus tour", "scuba diving", "dolphin watching", "surfing", "plantation tours", "historic site tours"]
 
 import random
@@ -24,9 +24,16 @@ while user_satisfaction == "No":
     user_replace = input("What selection do you want to replace? ")
     if user_replace == "Destination":
         random_destination = random.choice(destinations)
+        day_trip_generator()
+
     elif user_replace == "Restaurant":
         random_restaurant = random.choice(restaurants)
+        day_trip_generator()
+
     elif user_replace == "Mode of Transportation":
         random_transportation = random.choice(mode_of_transportation)
+        day_trip_generator()
+
     elif user_replace == "Entertainment":
         random_entertainment = random.choice(entertainment_list)
+        day_trip_generator()
