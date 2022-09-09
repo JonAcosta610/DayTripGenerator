@@ -5,15 +5,15 @@ entertainment_list = ["bus tour", "scuba diving lesson", "dolphin watching tour"
 
 import random
 
-
 print("Welcome to Trip Planner! Where we will plan your trip.")
 
-def day_trip_generator():
-    random_destination = random.choice(destinations)
-    random_restaurant = random.choice(restaurants)
-    random_transportation = random.choice(mode_of_transportation)
-    random_entertainment = random.choice(entertainment_list)
-    
+
+random_destination = random.choice(destinations)
+random_restaurant = random.choice(restaurants)
+random_transportation = random.choice(mode_of_transportation)
+random_entertainment = random.choice(entertainment_list)
+
+def day_trip_generator():  
     print(f"Destination: {random_destination}")
     print(f"Restaurant: {random_restaurant}")
     print(f"Mode of Transportation: {random_transportation}")
@@ -43,7 +43,7 @@ def itinerary():
         user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
 
     else:
-        print("Fantastic! Have a safe trip!")
+        print("Fantastic! Have a safe trip! Your itineray is below.")
+        day_trip_generator()
     
 itinerary()
-print(f"Here is your full day trip itinerary. You will be traveling to {random_destination}. We have made reservations for your meal at {random_restaurant}. While on the island you will be using {random_transportation} as your primary mode of transportation. And to cap the day you will take {random_entertainment}.")
