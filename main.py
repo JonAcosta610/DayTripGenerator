@@ -3,47 +3,50 @@ restaurants = ["Cara Mia", "Applebees", "Reethi Restaurant", "Symphony Restauran
 mode_of_transportation = ["plane", "cruise ship", "train", "car", "bus", "motorcycle", "mopeds", "bicycles"]
 entertainment_list = ["bus tour", "scuba diving lesson", "dolphin watching tour", "surfing lesson", "plantation tour", "historic site tour"]
 
+print("Welcome to Trip Planner! \nWhere we will plan your trip.\n")
+
 import random
-
-print("Welcome to Trip Planner! Where we will plan your trip.")
-
 
 random_destination = random.choice(destinations)
 random_restaurant = random.choice(restaurants)
 random_transportation = random.choice(mode_of_transportation)
 random_entertainment = random.choice(entertainment_list)
-
-def day_trip_generator():  
+    
+def trip_randomizer(random_destination, random_restaurant, random_transportation, random_entertainment):
     print(f"Destination: {random_destination}")
     print(f"Restaurant: {random_restaurant}")
     print(f"Mode of Transportation: {random_transportation}")
     print(f"Entertainment: {random_entertainment}")
-day_trip_generator()
+random_trip = trip_randomizer(random_destination, random_restaurant, random_transportation, random_entertainment)
 
-def itinerary():
+def itinerary(random_destination, random_restaurant, random_transportation, random_entertainment):
     user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
-    while user_satisfaction == "No":
-        user_replace = input("What selection do you want to replace? ")
-        if user_replace == "Destination":
+    while user_satisfaction == "No" or user_satisfaction == "NO" or user_satisfaction == "no":
+        user_replace = input("\nWhat selection do you want to replace? ")
+        if user_replace == "1":
             random_destination = random.choice(destinations)
-            day_trip_generator()
-
-        elif user_replace == "Restaurant":
+            print(random_destination)
+            
+        elif user_replace == "2":
             random_restaurant = random.choice(restaurants)
-            day_trip_generator()
-
-        elif user_replace == "Mode of Transportation":
+            print(random_restaurant)
+            
+        elif user_replace == "3":
             random_transportation = random.choice(mode_of_transportation)
-            day_trip_generator()
-
-        elif user_replace == "Entertainment":
+            print(random_transportation)
+            
+        elif user_replace == "4":
             random_entertainment = random.choice(entertainment_list)
-            day_trip_generator()
-        
-        user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
+            print(random_entertainment)
+               
+        user_satisfaction = input("Are you satisfied with this trip? Yes or No")
 
     else:
-        print("Fantastic! Have a safe trip! Your itineray is below.")
-        day_trip_generator()
+        print("\nFantastic! \nHave a safe trip! \nYour itineray is below.\n")
+        print(f"Destination: {random_destination}")
+        print(f"Restaurant: {random_restaurant}")
+        print(f"Mode of Transportation: {random_transportation}")
+        print(f"Entertainment: {random_entertainment}")
+    # day_trip_generator()
     
-itinerary()
+itinerary(random_destination, random_restaurant, random_transportation, random_entertainment)
