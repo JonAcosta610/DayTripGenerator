@@ -3,21 +3,22 @@ restaurants = ["Cara Mia", "Applebees", "Reethi Restaurant", "Symphony Restauran
 mode_of_transportation = ["plane", "cruise ship", "train", "car", "bus", "motorcycle", "mopeds", "bicycles"]
 entertainment_list = ["bus tour", "scuba diving lesson", "dolphin watching tour", "surfing lesson", "plantation tour", "historic site tour"]
 
-print("Welcome to Trip Planner! \nWhere we will plan your trip.\n")
-
 import random
 
+def welcome():
+    print("Welcome to Trip Planner! \nWhere we will plan your trip.\n")
+
+# def randomizer(random_destination, random_restaurant, random_transportation, random_entertainment):
 random_destination = random.choice(destinations)
 random_restaurant = random.choice(restaurants)
 random_transportation = random.choice(mode_of_transportation)
 random_entertainment = random.choice(entertainment_list)
-    
+ 
 def trip_randomizer(random_destination, random_restaurant, random_transportation, random_entertainment):
     print(f"Destination: {random_destination}")
     print(f"Restaurant: {random_restaurant}")
     print(f"Mode of Transportation: {random_transportation}")
     print(f"Entertainment: {random_entertainment}")
-random_trip = trip_randomizer(random_destination, random_restaurant, random_transportation, random_entertainment)
 
 def itinerary(random_destination, random_restaurant, random_transportation, random_entertainment):
     user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
@@ -39,14 +40,18 @@ def itinerary(random_destination, random_restaurant, random_transportation, rand
             random_entertainment = random.choice(entertainment_list)
             print(random_entertainment)
                
-        user_satisfaction = input("Are you satisfied with this trip? Yes or No")
+        user_satisfaction = input("Are you satisfied with this trip? Yes or No ")
 
     else:
         print("\nFantastic! \nHave a safe trip! \nYour itineray is below.\n")
         print(f"Destination: {random_destination}")
         print(f"Restaurant: {random_restaurant}")
         print(f"Mode of Transportation: {random_transportation}")
-        print(f"Entertainment: {random_entertainment}")
-    # day_trip_generator()
-    
-itinerary(random_destination, random_restaurant, random_transportation, random_entertainment)
+        print(f"Entertainment: {random_entertainment}")    
+
+def master_function():
+    welcome()
+    # randomizer(random_destination, random_restaurant, random_transportation, random_entertainment)
+    trip_randomizer(random_destination, random_restaurant, random_transportation, random_entertainment)
+    itinerary(random_destination, random_restaurant, random_transportation, random_entertainment)
+master_function()
